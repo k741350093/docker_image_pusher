@@ -138,9 +138,23 @@ jobs:
             
             # 将@sha256:等字符删除
             image_name_tag="${image_name_tag%%@*}"
-            new_image="$ALIYUN_REGISTRY/$ALIYUN_NAME_SPACE/$platform_prefix$name_space_prefix$image_name_tag"
+            
+            # 构建新的镜像名称
+            new_image="$ALIYUN_REGISTRY/$ALIYUN_NAME_SPACE/"
+            
+            # 只在前缀不为空时添加
+            if [[ -n "$platform_prefix" ]]; then
+                new_image+="$platform_prefix"
+            fi
+            
+            if [[ -n "$name_space_prefix" ]]; then
+                new_image+="$name_space_prefix"
+            fi
+            
+            new_image+="$image_name_tag"
+            
             echo "docker tag $image $new_image"
-            docker tag $image $new_image
+            docker tag "$image" "$new_image"
             echo "docker push $new_image"
             docker push $new_image
             echo "开始清理磁盘空间"
