@@ -1,3 +1,1 @@
-nginx
-
-
+openjdk:19-ea-34-jdk-slim-buster
