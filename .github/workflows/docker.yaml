@@ -57,7 +57,7 @@ jobs:
 
     - name: Build and push image Aliyun
       run: |
-        docker login -u "at4269f6q@aliyun.com" -p "koutong95" crpi-bquedaa9y4amn71x.cn-hangzhou.personal.cr.aliyuncs.com
+        docker login -u $ALIYUN_REGISTRY_USER -p $ALIYUN_REGISTRY_PASSWORD $ALIYUN_REGISTRY
         # 数据预处理,判断镜像是否重名
         declare -A duplicate_images
         declare -A temp_map
@@ -138,25 +138,11 @@ jobs:
             
             # 将@sha256:等字符删除
             image_name_tag="${image_name_tag%%@*}"
-            
-            # 构建新的镜像名称
-            new_image="$ALIYUN_REGISTRY/$ALIYUN_NAME_SPACE/"
-            
-            # 只在前缀不为空时添加
-            if [[ -n "$platform_prefix" ]]; then
-                new_image+="$platform_prefix"
-            fi
-            
-            if [[ -n "$name_space_prefix" ]]; then
-                new_image+="$name_space_prefix"
-            fi
-            
-            new_image+="$image_name_tag"
-            
+            new_image="$ALIYUN_REGISTRY/$ALIYUN_NAME_SPACE/$platform_prefix$name_space_prefix$image_name_tag"
             echo "docker tag $image $new_image"
-            docker tag "$image" "$image"
-            echo "docker push $image"
-            docker push $image
+            docker tag $image $new_image
+            echo "docker push $new_image"
+            docker push $new_image
             echo "开始清理磁盘空间"
             echo "=============================================================================="
             df -hT
