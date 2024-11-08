@@ -1,1 +1,2 @@
 openjdk:19-ea-buster
+openjdk:17-ea-33-buster
