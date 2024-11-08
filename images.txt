@@ -1,2 +1,2 @@
 openjdk:19-ea-buster
-docker pull openjdk:21-ea-slim
+openjdk:21-ea-slim
