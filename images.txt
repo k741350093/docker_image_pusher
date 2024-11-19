@@ -1,3 +1,4 @@
 openjdk:19-ea-buster
 openjdk:21-ea-slim
 oracleinanutshell/oracle-xe-11g
+maven:3.9-eclipse-temurin-21-alpine
