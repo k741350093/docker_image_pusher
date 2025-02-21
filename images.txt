@@ -6,3 +6,4 @@ collabora/code
 alpine:3.18
 evil0ctal/douyin_tiktok_download_api:b438d69
 node:18-slim
+onlyoffice/documentserver
