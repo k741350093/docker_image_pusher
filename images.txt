@@ -3,4 +3,4 @@ maven:3.9-eclipse-temurin-21-alpine
 node:18-slim
 python:3.12.9
 evil0ctal/douyin_tiktok_download_api:56f4ce4
-
+docker.all-hands.dev/all-hands-ai/runtime:0.31-nikolaik
