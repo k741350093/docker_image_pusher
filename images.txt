@@ -1,3 +1,2 @@
-node:20-bookworm-slim
-rabbitmq:3.13-management-alpine
-qdrant/qdrant:v1.15.5
+
+qdrant/qdrant:v1.17.0
