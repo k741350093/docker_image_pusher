@@ -1,1 +1,1 @@
-mcr.microsoft.com/playwright/python:v1.53.0-noble
+node:22.22.1-bookworm-slim
