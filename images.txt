@@ -1,2 +1,3 @@
-redroid/redroid:11.0.0_64only-latest
+redroid/redroid:11.0.0-latest
 redroid/redroid:13.0.0_64only-latest
+redroid/redroid:13.0.0-latest
