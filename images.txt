@@ -1,1 +1,2 @@
-amazoncorretto:21.0.13-al2023-headless
+azul-zulu:21.54-21.0.13.1-jre-debian13
+azul-zulu:21.54-21.0.13.1-jdk-debian13
